@@ -4,6 +4,8 @@
 require 'octokit'
 require 'date'
 require 'byebug'
+require 'json'
+
 class PHBCodeReporter
   def initialize
     github_access_token = ENV['GHA_TOKEN']
@@ -33,7 +35,8 @@ class PHBCodeReporter
       results << {
         user: pr.user.login,
         status: pr_status,
-        url: pr.html_url
+        url: pr.html_url,
+        description: pr.body
       }
     end
 
@@ -57,5 +60,6 @@ if __FILE__ == $0
     all_prs[user] = recent_prs
   end
 
+  puts JSON.pretty_generate(all_prs)
 end
 
