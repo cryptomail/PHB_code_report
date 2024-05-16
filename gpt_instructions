@@ -1,3 +1,10 @@
-For the following JSON, produce a summary report for what's going on, grouped by the github user.  The github user is the first key in the JSON.  In the report include 1. The description of the work 2. The URL of the pull request.  Do not include the user in the report or summarize by user.  But instead, group the report output by summary of what is going on instead. 
+For the following JSON, produce a summary report for what's going on, last week and this week, grouped by last week and this week.
+For the last week report, include:
+ 1. The description of the work
+ 2. The URL of the pull request.
+Do not include the user in the report or summarize by user.
+But instead, group the last week, or this week report section by output by a summary of what is going on instead.
+Make the report output to a slack blocks API format and make the title "Bolt Status Report"
+
 
 
