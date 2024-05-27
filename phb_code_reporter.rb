@@ -22,7 +22,7 @@ class PHBCodeReporter
 
     # Retrieve the PRs created or merged by the specific user within the last week
     prs = client.search_issues("repo:#{repo} author:#{user_handle} type:pr", sort: 'updated', order: 'desc')
-    continue unless prs
+    continue unless (prs || prs.items)
     prs.items.each do |pr|
       # Skip PRs in draft mode
       next if pr.draft == true
