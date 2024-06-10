@@ -59,7 +59,7 @@ if __FILE__ == $0
   users.each do |user|
     last_week_prs = reporter.find_recent_prs_by_user(repository, user, true)
     last_week_all_prs[user] = last_week_prs
-    this_week_prs = reporter.find_recent_prs_by_user(repository, user, true)
+    this_week_prs = reporter.find_recent_prs_by_user(repository, user, false)
     this_week_all_prs[user] = this_week_prs
   end
 
